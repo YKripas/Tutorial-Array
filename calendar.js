@@ -26,8 +26,15 @@
       calendarDay
 	
 */
-
+//A FUNCTION TO CREATE THE TABLE
 function calendar() {
     document.write("<table id = 'calendar_table'>");
     document.write("</table>");
+}
+Function writeCalTitle(calendarDay){
+    
+    /*The calendarDay parameter contains  a Date object that the calendar is based upon*/
+    
+    //monthName contains an array of month names
+    var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 }
