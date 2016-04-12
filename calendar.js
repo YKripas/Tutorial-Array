@@ -28,10 +28,15 @@
 */
 //A FUNCTION TO CREATE THE TABLE
 function calendar() {
+    //DATE THAT THE MONTLY CALENDAR IS BASED ON
+    var calDate = new Date("July 6, 2015");
     document.write("<table id = 'calendar_table'>");
+    //WRITE THE HEADER ROW OF THE CALENDAR TABLE
+    writeCalTitle(calDate);
+    
     document.write("</table>");
 }
-Function writeCalTitle(calendarDay){
+function writeCalTitle(calendarDay){
     
     /*The calendarDay parameter contains  a Date object that the calendar is based upon*/
     
