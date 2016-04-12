@@ -81,7 +81,9 @@ function daysInMonth(calendarDay) {
     var thisMonth = calendarDay.getMonth();
     //REVISE THE DAYS IN FEBRUARY FOR LEAP YEARS
     if (thisYear % 4 ==0){
-        dayCount[1] = 29;
+        if ((thisYear % 100 !=0) || (thisYear % 400==0)) {
+            dayCount[1]=29;
+        }
     }
     //RETURN THE NUMBER OF DAYS FOR THE CURRENT MONTH
     return dayCount[thisMonth];
