@@ -88,3 +88,11 @@ function daysInMonth(calendarDay) {
     //RETURN THE NUMBER OF DAYS FOR THE CURRENT MONTH
     return dayCount[thisMonth];
 }
+
+function writeCalDays(calendarDay){
+    //DETERMINE THE STARTING DAY OF THE MONTH
+    var day = new Date(calendarDay.getFullYear(), calendarDay.getMonth(), 1);
+    var weekDay = day.getDay();
+    //WRITE BLANK CELLS PRECEDING THE STARTING DAY
+    //WRITE CELLS FOR EACH DAY OF THE MONTH
+}
