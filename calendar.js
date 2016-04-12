@@ -33,6 +33,8 @@ function calendar() {
     document.write("<table id = 'calendar_table'>");
     //WRITE THE HEADER ROW OF THE CALENDAR TABLE
     writeCalTitle(calDate);
+    //WRITE THE ROW OF WEEKDAY ABBREVIATIONS
+    writeDayNames();
     
     document.write("</table>");
 }
@@ -52,5 +54,20 @@ function writeCalTitle(calendarDay){
     document.write("<th id='calendar_head' colspan='7'>");
     document.write(monthName[thisMonth] + "" + thisYear);
     document.write("</th>");
+    document.write("</tr>");
+}
+
+function writeDayNames(){
+    //ARRAY OF WEEKDAY ABBREVIATIONS
+    var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    
+    //START A TABLE ROW OF THE WEEKDAY ABBREAVIATIONS
+    document.write("<tr>");
+    
+    //LOOP THROUGH THE 'dayName' ARRAY
+    for (var i= 0; i < dayName.length; i++){
+        document.write("<th class='calendar_weekdays'>" + dayName[i] + "</th>");
+    }
+    //END OF TABLE ROW
     document.write("</tr>");
 }
