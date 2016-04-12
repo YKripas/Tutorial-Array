@@ -37,4 +37,15 @@ Function writeCalTitle(calendarDay){
     
     //monthName contains an array of month names
     var monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    /*The thisMonth variable contains the calendar month number, the thisYear variable contains the 4-digit year value*/
+    var thisMonth = calendarDay.getMonth();
+    var thisYear = calendarDay.getFullYear();
+    
+    //write the table header row of the calendar table
+    document.write("<tr>");
+    document.write("<th id='calendar_head' colspan='7'>");
+    document.write(monthName[thisMonth] + "" + thisYear);
+    document.write("</th>");
+    document.write("</tr>");
 }
