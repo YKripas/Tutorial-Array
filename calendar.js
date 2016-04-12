@@ -71,3 +71,14 @@ function writeDayNames(){
     //END OF TABLE ROW
     document.write("</tr>");
 }
+
+function daysInMonth(calendarDay) {
+    //ARRAY OF DAYS IN EACH MONTH
+    var dayCount = [31,28,31,30,31,30,31,31,30,31,30,31];
+    //EXTRACT THE FOUR DIGIT YEAR VALUE FROM 'calendarDay'
+    var thisYear = calendarDay.getFullYear();
+    //EXTRACT THE MONTH VALUE FROM 'calendarDay'
+    var thisMonth = calendarDay.getMonth();
+    //RETURN THE NUMBER OF DAYS FOR THE CURRENT MONTH
+    return dayCount[thisMonth];
+}
