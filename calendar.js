@@ -27,9 +27,11 @@
 	
 */
 //A FUNCTION TO CREATE THE TABLE
-function calendar() {
+function calendar(dateString) {
     //DATE THAT THE MONTLY CALENDAR IS BASED ON
-    var calDate = new Date("July 6, 2015");
+   if (dateString == null) calDate = new Date()
+        else calDate= new Date(dateString);
+    
     document.write("<table id = 'calendar_table'>");
     //WRITE THE HEADER ROW OF THE CALENDAR TABLE
     writeCalTitle(calDate);
@@ -76,6 +78,7 @@ function writeDayNames(){
 function daysInMonth(calendarDay) {
     //ARRAY OF DAYS IN EACH MONTH
     var dayCount = [31,28,31,30,31,30,31,31,30,31,30,31];
+                   
     //EXTRACT THE FOUR DIGIT YEAR VALUE FROM 'calendarDay'
     var thisYear = calendarDay.getFullYear();
     //EXTRACT THE MONTH VALUE FROM 'calendarDay'
@@ -109,12 +112,12 @@ function writeCalDays(calendarDay){
         
         if (weekDay==0) document.write("<tr>");//START A NEW ROW ON SUNDAY
         //TEST IF THE DAY BEING WRITTEN MATCHES THE CALENDAR DAY
-        //if (i == highlightDay){
-            //document.write("<td class='calendar_dates' id='calendar_today'>" + i + "</td>");
-            //}
-            //else {
-              //  document.write("<td class='calendar_dates'>" + i + "</td>");
-            //}
+        if (i == highlightDay){
+            document.write("<td class='calendar_dates' id='calendar_today'>" + i + dayEvent[i] + "</td>");
+            }
+            else {
+              document.write("<td class='calendar_dates'>" + i + dayEvent[i] + "</td>");
+            }
         document.write("<td class='calendar_dates'>" + i + "</td>");
          if (weekDay == 6) document.write("</tr>");//END THE ROW ON SATURDAY
     }
