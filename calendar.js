@@ -100,12 +100,21 @@ function writeCalDays(calendarDay){
     }
     //WRITE CELLS FOR EACH DAY OF THE MONTH
     var totalDays = daysInMonth(calendarDay);
+    var highlightDay = calendarDay.getDate();
+    
     for (var i = 1; i<= totalDays; i++){
         //MOVE TO THE NEXT DAY IN THE MONTH
         day.setDate(i);
         weekDay = day.getDay();
         
         if (weekDay==0) document.write("<tr>");//START A NEW ROW ON SUNDAY
+        //TEST IF THE DAY BEING WRITTEN MATCHES THE CALENDAR DAY
+        //if (i == highlightDay){
+            //document.write("<td class='calendar_dates' id='calendar_today'>" + i + "</td>");
+            //}
+            //else {
+              //  document.write("<td class='calendar_dates'>" + i + "</td>");
+            //}
         document.write("<td class='calendar_dates'>" + i + "</td>");
          if (weekDay == 6) document.write("</tr>");//END THE ROW ON SATURDAY
     }
